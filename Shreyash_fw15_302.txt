@@ -1,0 +1,536 @@
+> use assignment
+switched to db assignment
+> db
+assignment
+> db.users.insert({"first_name" : "shreyash" , "last_name" : "gedam" , "email" : "shreyash@" , "gender":"M", "ip_address" : 1 , "age" : 25  })
+WriteResult({ "nInserted" : 1 })
+> db.user.find({})
+> db.user.find()
+> db.users.find()
+{ "_id" : ObjectId("622765fa96c8bdedc1bb3d09"), "first_name" : "shreyash", "last_name" : "gedam", "email" : "shreyash@", "gender" : "M", "ip_address" : 1, "age" : 25 }
+> db.users.insert({"first_name" : "ramesh" , "last_name" : "rgedam" , "email" : "ramesh@" , "gender":"M", "ip_address" : 2 , "age" : 24  })
+WriteResult({ "nInserted" : 1 })
+> db.user.find()
+> db.users.find()
+{ "_id" : ObjectId("622765fa96c8bdedc1bb3d09"), "first_name" : "shreyash", "last_name" : "gedam", "email" : "shreyash@", "gender" : "M", "ip_address" : 1, "age" : 25 }
+{ "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"), "first_name" : "ramesh", "last_name" : "rgedam", "email" : "ramesh@", "gender" : "M", "ip_address" : 2, "age" : 24 }
+> db.users.find().preety()
+uncaught exception: TypeError: db.users.find(...).preety is not a function :
+@(shell):1:1
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("622765fa96c8bdedc1bb3d09"),
+        "first_name" : "shreyash",
+        "last_name" : "gedam",
+        "email" : "shreyash@",
+        "gender" : "M",
+        "ip_address" : 1,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"),
+        "first_name" : "ramesh",
+        "last_name" : "rgedam",
+        "email" : "ramesh@",
+        "gender" : "M",
+        "ip_address" : 2,
+        "age" : 24
+}
+> db.users.insert({"first_name" : "ramesh2" , "last_name" : "rgedam2" , "email" : "ramesh2@" , "gender":"M", "ip_address" : 3 , "age" : 23  })
+WriteResult({ "nInserted" : 1 })
+> db.users.insert({"first_name" : "sonia" , "last_name" : "sgedam" , "email" : "sonia@" , "gender":"F", "ip_address" : 4 , "age" : 22  })
+WriteResult({ "nInserted" : 1 })
+> db.users.insert({"first_name" : "sonia2" , "last_name" : "sgedam2" , "email" : "sonia2@" , "gender":"F", "ip_address" : 5 , "age" : 22  })
+WriteResult({ "nInserted" : 1 })
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("622765fa96c8bdedc1bb3d09"),
+        "first_name" : "shreyash",
+        "last_name" : "gedam",
+        "email" : "shreyash@",
+        "gender" : "M",
+        "ip_address" : 1,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"),
+        "first_name" : "ramesh",
+        "last_name" : "rgedam",
+        "email" : "ramesh@",
+        "gender" : "M",
+        "ip_address" : 2,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"),
+        "first_name" : "ramesh2",
+        "last_name" : "rgedam2",
+        "email" : "ramesh2@",
+        "gender" : "M",
+        "ip_address" : 3,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("622766ed96c8bdedc1bb3d0c"),
+        "first_name" : "sonia",
+        "last_name" : "sgedam",
+        "email" : "sonia@",
+        "gender" : "F",
+        "ip_address" : 4,
+        "age" : 22
+}
+{
+        "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"),
+        "first_name" : "sonia2",
+        "last_name" : "sgedam2",
+        "email" : "sonia2@",
+        "gender" : "F",
+        "ip_address" : 5,
+        "age" : 22
+}
+> db.users.insert( [{"first_name" : "rohan" , "last_name" : "karve" , "email" : "rohan@" , "gender":"M", "ip_address" : 6 , "age" : 23 } ,{"first_name" : "mohan" , "last_name" : "karve2" , "email" : "mohan@" , "gender" : "M" ,"ip_address": 7 , "age" : 21 }, {"first_name " : "shruti" , "last_name" : "gedam" , "email" : "shruti@" , "gender" : "F" , "ip_address" : 8 , "age" : 21 } , {"first_name" : "anjali" , "last_name" : "tomar" , "email" : "anjali@" , "gender" : "F" , "ip_address" : 9 , "age" : 30  } , {" first_name" : "kajal" , "last_name" : "sharma" , "email" : "kajal@" , "gender" : "F" , "ip_address" : 10 , "age" : 20 }   ] )
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 5,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.users.find()
+{ "_id" : ObjectId("622765fa96c8bdedc1bb3d09"), "first_name" : "shreyash", "last_name" : "gedam", "email" : "shreyash@", "gender" : "M", "ip_address" : 1, "age" : 25 }
+{ "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"), "first_name" : "ramesh", "last_name" : "rgedam", "email" : "ramesh@", "gender" : "M", "ip_address" : 2, "age" : 24 }
+{ "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"), "first_name" : "ramesh2", "last_name" : "rgedam2", "email" : "ramesh2@", "gender" : "M", "ip_address" : 3, "age" : 23 }
+{ "_id" : ObjectId("622766ed96c8bdedc1bb3d0c"), "first_name" : "sonia", "last_name" : "sgedam", "email" : "sonia@", "gender" : "F", "ip_address" : 4, "age" : 22 }
+{ "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"), "first_name" : "sonia2", "last_name" : "sgedam2", "email" : "sonia2@", "gender" : "F", "ip_address" : 5, "age" : 22 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"), "first_name" : "rohan", "last_name" : "karve", "email" : "rohan@", "gender" : "M", "ip_address" : 6, "age" : 23 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"), "first_name" : "mohan", "last_name" : "karve2", "email" : "mohan@", "gender" : "M", "ip_address" : 7, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d10"), "first_name " : "shruti", "last_name" : "gedam", "email" : "shruti@", "gender" : "F", "ip_address" : 8, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d11"), "first_name" : "anjali", "last_name" : "tomar", "email" : "anjali@", "gender" : "F", "ip_address" : 9, "age" : 30 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d12"), " first_name" : "kajal", "last_name" : "sharma", "email" : "kajal@", "gender" : "F", "ip_address" : 10, "age" : 20 }
+> db.users.find().pretty
+function() {
+    this._prettyShell = true;
+    return this;
+}
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("622765fa96c8bdedc1bb3d09"),
+        "first_name" : "shreyash",
+        "last_name" : "gedam",
+        "email" : "shreyash@",
+        "gender" : "M",
+        "ip_address" : 1,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"),
+        "first_name" : "ramesh",
+        "last_name" : "rgedam",
+        "email" : "ramesh@",
+        "gender" : "M",
+        "ip_address" : 2,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"),
+        "first_name" : "ramesh2",
+        "last_name" : "rgedam2",
+        "email" : "ramesh2@",
+        "gender" : "M",
+        "ip_address" : 3,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("622766ed96c8bdedc1bb3d0c"),
+        "first_name" : "sonia",
+        "last_name" : "sgedam",
+        "email" : "sonia@",
+        "gender" : "F",
+        "ip_address" : 4,
+        "age" : 22
+}
+{
+        "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"),
+        "first_name" : "sonia2",
+        "last_name" : "sgedam2",
+        "email" : "sonia2@",
+        "gender" : "F",
+        "ip_address" : 5,
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"),
+        "first_name" : "rohan",
+        "last_name" : "karve",
+        "email" : "rohan@",
+        "gender" : "M",
+        "ip_address" : 6,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"),
+        "first_name" : "mohan",
+        "last_name" : "karve2",
+        "email" : "mohan@",
+        "gender" : "M",
+        "ip_address" : 7,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d10"),
+        "first_name " : "shruti",
+        "last_name" : "gedam",
+        "email" : "shruti@",
+        "gender" : "F",
+        "ip_address" : 8,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d11"),
+        "first_name" : "anjali",
+        "last_name" : "tomar",
+        "email" : "anjali@",
+        "gender" : "F",
+        "ip_address" : 9,
+        "age" : 30
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d12"),
+        " first_name" : "kajal",
+        "last_name" : "sharma",
+        "email" : "kajal@",
+        "gender" : "F",
+        "ip_address" : 10,
+        "age" : 20
+}
+> db.user.findOne()
+null
+> db.user.findOne({})
+null
+> db.users.findOne()
+{
+        "_id" : ObjectId("622765fa96c8bdedc1bb3d09"),
+        "first_name" : "shreyash",
+        "last_name" : "gedam",
+        "email" : "shreyash@",
+        "gender" : "M",
+        "ip_address" : 1,
+        "age" : 25
+}
+> db.users.remove({"first_name " : "sonia"})
+WriteResult({ "nRemoved" : 0 })
+> db.users.find()
+{ "_id" : ObjectId("622765fa96c8bdedc1bb3d09"), "first_name" : "shreyash", "last_name" : "gedam", "email" : "shreyash@", "gender" : "M", "ip_address" : 1, "age" : 25 }
+{ "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"), "first_name" : "ramesh", "last_name" : "rgedam", "email" : "ramesh@", "gender" : "M", "ip_address" : 2, "age" : 24 }
+{ "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"), "first_name" : "ramesh2", "last_name" : "rgedam2", "email" : "ramesh2@", "gender" : "M", "ip_address" : 3, "age" : 23 }
+{ "_id" : ObjectId("622766ed96c8bdedc1bb3d0c"), "first_name" : "sonia", "last_name" : "sgedam", "email" : "sonia@", "gender" : "F", "ip_address" : 4, "age" : 22 }
+{ "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"), "first_name" : "sonia2", "last_name" : "sgedam2", "email" : "sonia2@", "gender" : "F", "ip_address" : 5, "age" : 22 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"), "first_name" : "rohan", "last_name" : "karve", "email" : "rohan@", "gender" : "M", "ip_address" : 6, "age" : 23 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"), "first_name" : "mohan", "last_name" : "karve2", "email" : "mohan@", "gender" : "M", "ip_address" : 7, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d10"), "first_name " : "shruti", "last_name" : "gedam", "email" : "shruti@", "gender" : "F", "ip_address" : 8, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d11"), "first_name" : "anjali", "last_name" : "tomar", "email" : "anjali@", "gender" : "F", "ip_address" : 9, "age" : 30 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d12"), " first_name" : "kajal", "last_name" : "sharma", "email" : "kajal@", "gender" : "F", "ip_address" : 10, "age" : 20 }
+> db.users.find()
+{ "_id" : ObjectId("622765fa96c8bdedc1bb3d09"), "first_name" : "shreyash", "last_name" : "gedam", "email" : "shreyash@", "gender" : "M", "ip_address" : 1, "age" : 25 }
+{ "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"), "first_name" : "ramesh", "last_name" : "rgedam", "email" : "ramesh@", "gender" : "M", "ip_address" : 2, "age" : 24 }
+{ "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"), "first_name" : "ramesh2", "last_name" : "rgedam2", "email" : "ramesh2@", "gender" : "M", "ip_address" : 3, "age" : 23 }
+{ "_id" : ObjectId("622766ed96c8bdedc1bb3d0c"), "first_name" : "sonia", "last_name" : "sgedam", "email" : "sonia@", "gender" : "F", "ip_address" : 4, "age" : 22 }
+{ "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"), "first_name" : "sonia2", "last_name" : "sgedam2", "email" : "sonia2@", "gender" : "F", "ip_address" : 5, "age" : 22 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"), "first_name" : "rohan", "last_name" : "karve", "email" : "rohan@", "gender" : "M", "ip_address" : 6, "age" : 23 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"), "first_name" : "mohan", "last_name" : "karve2", "email" : "mohan@", "gender" : "M", "ip_address" : 7, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d10"), "first_name " : "shruti", "last_name" : "gedam", "email" : "shruti@", "gender" : "F", "ip_address" : 8, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d11"), "first_name" : "anjali", "last_name" : "tomar", "email" : "anjali@", "gender" : "F", "ip_address" : 9, "age" : 30 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d12"), " first_name" : "kajal", "last_name" : "sharma", "email" : "kajal@", "gender" : "F", "ip_address" : 10, "age" : 20 }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("622765fa96c8bdedc1bb3d09"),
+        "first_name" : "shreyash",
+        "last_name" : "gedam",
+        "email" : "shreyash@",
+        "gender" : "M",
+        "ip_address" : 1,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"),
+        "first_name" : "ramesh",
+        "last_name" : "rgedam",
+        "email" : "ramesh@",
+        "gender" : "M",
+        "ip_address" : 2,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"),
+        "first_name" : "ramesh2",
+        "last_name" : "rgedam2",
+        "email" : "ramesh2@",
+        "gender" : "M",
+        "ip_address" : 3,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("622766ed96c8bdedc1bb3d0c"),
+        "first_name" : "sonia",
+        "last_name" : "sgedam",
+        "email" : "sonia@",
+        "gender" : "F",
+        "ip_address" : 4,
+        "age" : 22
+}
+{
+        "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"),
+        "first_name" : "sonia2",
+        "last_name" : "sgedam2",
+        "email" : "sonia2@",
+        "gender" : "F",
+        "ip_address" : 5,
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"),
+        "first_name" : "rohan",
+        "last_name" : "karve",
+        "email" : "rohan@",
+        "gender" : "M",
+        "ip_address" : 6,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"),
+        "first_name" : "mohan",
+        "last_name" : "karve2",
+        "email" : "mohan@",
+        "gender" : "M",
+        "ip_address" : 7,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d10"),
+        "first_name " : "shruti",
+        "last_name" : "gedam",
+        "email" : "shruti@",
+        "gender" : "F",
+        "ip_address" : 8,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d11"),
+        "first_name" : "anjali",
+        "last_name" : "tomar",
+        "email" : "anjali@",
+        "gender" : "F",
+        "ip_address" : 9,
+        "age" : 30
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d12"),
+        " first_name" : "kajal",
+        "last_name" : "sharma",
+        "email" : "kajal@",
+        "gender" : "F",
+        "ip_address" : 10,
+        "age" : 20
+}
+> db.users.remove({"first_name" : "sonia" })
+WriteResult({ "nRemoved" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("622765fa96c8bdedc1bb3d09"), "first_name" : "shreyash", "last_name" : "gedam", "email" : "shreyash@", "gender" : "M", "ip_address" : 1, "age" : 25 }
+{ "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"), "first_name" : "ramesh", "last_name" : "rgedam", "email" : "ramesh@", "gender" : "M", "ip_address" : 2, "age" : 24 }
+{ "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"), "first_name" : "ramesh2", "last_name" : "rgedam2", "email" : "ramesh2@", "gender" : "M", "ip_address" : 3, "age" : 23 }
+{ "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"), "first_name" : "sonia2", "last_name" : "sgedam2", "email" : "sonia2@", "gender" : "F", "ip_address" : 5, "age" : 22 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"), "first_name" : "rohan", "last_name" : "karve", "email" : "rohan@", "gender" : "M", "ip_address" : 6, "age" : 23 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"), "first_name" : "mohan", "last_name" : "karve2", "email" : "mohan@", "gender" : "M", "ip_address" : 7, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d10"), "first_name " : "shruti", "last_name" : "gedam", "email" : "shruti@", "gender" : "F", "ip_address" : 8, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d11"), "first_name" : "anjali", "last_name" : "tomar", "email" : "anjali@", "gender" : "F", "ip_address" : 9, "age" : 30 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d12"), " first_name" : "kajal", "last_name" : "sharma", "email" : "kajal@", "gender" : "F", "ip_address" : 10, "age" : 20 }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("622765fa96c8bdedc1bb3d09"),
+        "first_name" : "shreyash",
+        "last_name" : "gedam",
+        "email" : "shreyash@",
+        "gender" : "M",
+        "ip_address" : 1,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("6227665e96c8bdedc1bb3d0a"),
+        "first_name" : "ramesh",
+        "last_name" : "rgedam",
+        "email" : "ramesh@",
+        "gender" : "M",
+        "ip_address" : 2,
+        "age" : 24
+}
+{
+        "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"),
+        "first_name" : "ramesh2",
+        "last_name" : "rgedam2",
+        "email" : "ramesh2@",
+        "gender" : "M",
+        "ip_address" : 3,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"),
+        "first_name" : "sonia2",
+        "last_name" : "sgedam2",
+        "email" : "sonia2@",
+        "gender" : "F",
+        "ip_address" : 5,
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"),
+        "first_name" : "rohan",
+        "last_name" : "karve",
+        "email" : "rohan@",
+        "gender" : "M",
+        "ip_address" : 6,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"),
+        "first_name" : "mohan",
+        "last_name" : "karve2",
+        "email" : "mohan@",
+        "gender" : "M",
+        "ip_address" : 7,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d10"),
+        "first_name " : "shruti",
+        "last_name" : "gedam",
+        "email" : "shruti@",
+        "gender" : "F",
+        "ip_address" : 8,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d11"),
+        "first_name" : "anjali",
+        "last_name" : "tomar",
+        "email" : "anjali@",
+        "gender" : "F",
+        "ip_address" : 9,
+        "age" : 30
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d12"),
+        " first_name" : "kajal",
+        "last_name" : "sharma",
+        "email" : "kajal@",
+        "gender" : "F",
+        "ip_address" : 10,
+        "age" : 20
+}
+> db.users.removeMany({"first_name" : "ramesh" } , {"first_name" : "ramesh2" })
+uncaught exception: TypeError: db.users.removeMany is not a function :
+@(shell):1:1
+> db.users.removeMany([{"first_name" : "ramesh" } , {"first_name" : "ramesh2" }])
+uncaught exception: TypeError: db.users.removeMany is not a function :
+@(shell):1:1
+> db.users.remove({"first_name" : "ramesh" } , {"first_name" : "ramesh2" })
+WriteResult({ "nRemoved" : 1 })
+> db.users.remove([{"first_name" : "anjali" } , {"first_name" : "kajal" }])
+WriteCommandError({
+        "ok" : 0,
+        "errmsg" : "BSON field 'delete.deletes.q' is the wrong type 'array', expected type 'object'",
+        "code" : 14,
+        "codeName" : "TypeMismatch"
+})
+> db.user.find()
+> db.users.find()
+{ "_id" : ObjectId("622765fa96c8bdedc1bb3d09"), "first_name" : "shreyash", "last_name" : "gedam", "email" : "shreyash@", "gender" : "M", "ip_address" : 1, "age" : 25 }
+{ "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"), "first_name" : "ramesh2", "last_name" : "rgedam2", "email" : "ramesh2@", "gender" : "M", "ip_address" : 3, "age" : 23 }
+{ "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"), "first_name" : "sonia2", "last_name" : "sgedam2", "email" : "sonia2@", "gender" : "F", "ip_address" : 5, "age" : 22 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"), "first_name" : "rohan", "last_name" : "karve", "email" : "rohan@", "gender" : "M", "ip_address" : 6, "age" : 23 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"), "first_name" : "mohan", "last_name" : "karve2", "email" : "mohan@", "gender" : "M", "ip_address" : 7, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d10"), "first_name " : "shruti", "last_name" : "gedam", "email" : "shruti@", "gender" : "F", "ip_address" : 8, "age" : 21 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d11"), "first_name" : "anjali", "last_name" : "tomar", "email" : "anjali@", "gender" : "F", "ip_address" : 9, "age" : 30 }
+{ "_id" : ObjectId("62276aa596c8bdedc1bb3d12"), " first_name" : "kajal", "last_name" : "sharma", "email" : "kajal@", "gender" : "F", "ip_address" : 10, "age" : 20 }
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("622765fa96c8bdedc1bb3d09"),
+        "first_name" : "shreyash",
+        "last_name" : "gedam",
+        "email" : "shreyash@",
+        "gender" : "M",
+        "ip_address" : 1,
+        "age" : 25
+}
+{
+        "_id" : ObjectId("622766cb96c8bdedc1bb3d0b"),
+        "first_name" : "ramesh2",
+        "last_name" : "rgedam2",
+        "email" : "ramesh2@",
+        "gender" : "M",
+        "ip_address" : 3,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("6227670b96c8bdedc1bb3d0d"),
+        "first_name" : "sonia2",
+        "last_name" : "sgedam2",
+        "email" : "sonia2@",
+        "gender" : "F",
+        "ip_address" : 5,
+        "age" : 22
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0e"),
+        "first_name" : "rohan",
+        "last_name" : "karve",
+        "email" : "rohan@",
+        "gender" : "M",
+        "ip_address" : 6,
+        "age" : 23
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d0f"),
+        "first_name" : "mohan",
+        "last_name" : "karve2",
+        "email" : "mohan@",
+        "gender" : "M",
+        "ip_address" : 7,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d10"),
+        "first_name " : "shruti",
+        "last_name" : "gedam",
+        "email" : "shruti@",
+        "gender" : "F",
+        "ip_address" : 8,
+        "age" : 21
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d11"),
+        "first_name" : "anjali",
+        "last_name" : "tomar",
+        "email" : "anjali@",
+        "gender" : "F",
+        "ip_address" : 9,
+        "age" : 30
+}
+{
+        "_id" : ObjectId("62276aa596c8bdedc1bb3d12"),
+        " first_name" : "kajal",
+        "last_name" : "sharma",
+        "email" : "kajal@",
+        "gender" : "F",
+        "ip_address" : 10,
+        "age" : 20
+}
+> db
+assignment
+> db.dropDatabse()
+uncaught exception: TypeError: db.dropDatabse is not a function :
+@(shell):1:1
+> db.dropDatabase()
+{ "ok" : 1 }
